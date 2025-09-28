@@ -1,7 +1,21 @@
+
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import Main from "@/components/main";
+
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h1>Olá Mundo</h1>
-    </div>
+    <>
+      <header>
+        <Header />
+      </header>
+      <main>
+     <Main/>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
