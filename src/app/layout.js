@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className={`${inter.variable} ${poppins.variable} antialiased font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20"`}>
+      <body className={`${inter.variable} ${poppins.variable} antialiased `}>
         {children}
       </body>
     </html>
