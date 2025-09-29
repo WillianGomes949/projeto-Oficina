@@ -1,38 +1,4 @@
-// import Image from "next/image";
 
-// export default function Hero() {
-//   return (
-//     <section className="relative h-96 md:h-screen overflow-hidden">
-//       {/* Imagem de background */}
-//       <Image
-//         src="/images/car.png" // ou URL externa
-//         alt="Background hero"
-//         fill
-//         className="object-cover filter grayscale "
-//         priority
-//       />
-//       <div className="absolute inset-0 bg-blue-950/80"></div>
-
-//       {/* Conteúdo sobre a imagem */}
-//       <div className="relative flex items-center justify-center h-full w-full max-w-screen-xl mx-auto">
-//         <div className="text-center text-white w-[90%] bg-amber-500">
-//           <div className="relative flex flex-col lg:flex-row items-center justify-center gap-4">
-//             <h1 className="text-4xl font-bold">Seu Título</h1>
-//             <p className="mt-4 text-xl">Subtítulo ou descrição</p>
-
-//             <Image
-//               src="/images/carview.png" // ou URL externa
-//               alt="Background hero"
-//               width={600}
-//               height={600}
-//               className="lg:absolute -top-50 right-0"
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 import Image from "next/image";
 
 export default function Hero() {
