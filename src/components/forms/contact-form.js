@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Button from "./Button";
+import Button from "../ui/button";
+
 
 export default function Form() {
   // Estado para armazenar todos os dados do formulário em um único objeto
