@@ -1,3 +1,5 @@
+import { RiMailSendLine, RiMapLine, RiPhoneFill, RiTimeLine } from "@remixicon/react";
+import IconNoLink from "../ui/iconNoLink";
 
 export default function Contact() {
   return (
@@ -12,40 +14,40 @@ export default function Contact() {
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span>📞</span>
-                </div>
+              <div className="flex items-center gap-4">
+                <IconNoLink size="md">
+                  <span><RiPhoneFill/></span>
+                </IconNoLink>
                 <div>
                   <h4 className="font-semibold">Telefone</h4>
                   <p className="text-gray-300">(11) 9999-9999</p>
                 </div>
               </div>
               
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span>📧</span>
-                </div>
+              <div className="flex items-center gap-4">
+                <IconNoLink size="md">
+                  <span><RiMailSendLine/></span>
+                </IconNoLink>
                 <div>
                   <h4 className="font-semibold">Email</h4>
                   <p className="text-gray-300">contato@climauto.com.br</p>
                 </div>
               </div>
               
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span>📍</span>
-                </div>
+              <div className="flex items-center gap-4">
+                <IconNoLink size="md">
+                  <span><RiMapLine/></span>
+                </IconNoLink>
                 <div>
                   <h4 className="font-semibold">Endereço</h4>
                   <p className="text-gray-300">Rua Exemplo, 123 - São Paulo, SP</p>
                 </div>
               </div>
               
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span>🕒</span>
-                </div>
+              <div className="flex items-center gap-4">
+                <IconNoLink size="md">
+                  <span><RiTimeLine/></span>
+                </IconNoLink>
                 <div>
                   <h4 className="font-semibold">Horário de Funcionamento</h4>
                   <p className="text-gray-300">Seg - Sex: 8h às 18h | Sáb: 8h às 12h</p>

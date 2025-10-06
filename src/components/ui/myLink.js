@@ -1,8 +1,8 @@
 import Link from "next/link";
-export default function MyLink ({url, children }) {
+export default function MyLink ({ href, children, className = []}) {
     return (<Link
-                href={url}
-                className={`font-semibold transition-colors duration-150 hover:text-blue-600`}
+                href={href}
+                className={`text-gray-700 hover:text-blue-600 font-medium transition duration-300 ${className}`}
               >
                 {children}
               </Link>);

@@ -6,6 +6,7 @@ import Header from "@/components/layout/header";
 import Hero from "@/components/layout/hero";
 import Services from "@/components/layout/services";
 import WhyChooseUs from "@/components/layout/wyChouseUs";
+import StartButton from "@/components/ui/startButton";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <Services />
         <WhyChooseUs />
         <Contact />
+        <StartButton/>
       </main>
       <Footer />
     </>

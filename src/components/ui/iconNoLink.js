@@ -1,5 +1,5 @@
 
-export default function IconLink({ children, color = 'blue', className = '', href = '#', target, rel, size = 'xs'}) {
+export default function IconNoLink({ children, color = 'blue', className = '', size = 'xs'}) {
 
   
   const baseIconStyle =
@@ -14,10 +14,6 @@ export default function IconLink({ children, color = 'blue', className = '', hre
     blue: "bg-blue-700 text-white",
     green: "bg-green-600 text-white",
     gray: "bg-gray-500/40 text-white",
-    redLine: "border-2 border-red-600 text-red-600",
-    blueLine: "border-2 border-blue-700 text-blue-700",
-    greenLine: "border-2 border-green-600 text-green-600",
-    grayLine: "border-2 border-gray-500 text-white-gray-500",
   };
   const sizeSchemes = {
     xs: "text-2xs p-1 rounded-full",
@@ -27,13 +23,10 @@ export default function IconLink({ children, color = 'blue', className = '', hre
   };
 
   return (
-    <a
-      href={href}
-      target={target} 
-      rel={rel}   
+    <span
       className={`${baseIconStyle} ${colorSchemes[color]} ${sizeSchemes[size]} ${className}`}
     >
       {children}
-    </a>
+    </span>
   );
 }

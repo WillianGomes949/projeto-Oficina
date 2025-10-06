@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Site Oficina",
+  title: "Ar-veicular",
   description: "Uma oficina para gerar confiança",
 };
 
