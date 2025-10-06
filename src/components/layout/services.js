@@ -7,6 +7,7 @@ import {
   RiSettings5Line,
 } from "@remixicon/react";
 import Button from "../ui/button";
+import Link from "next/link";
 
 export default function Services() {
   const services = [
@@ -86,7 +87,7 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <Button>Saiba Mais</Button>
+                <Button><Link href="/servicos">Saiba Mais</Link></Button>
               </div>
             </div>
           ))}

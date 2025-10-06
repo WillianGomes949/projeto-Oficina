@@ -1,25 +1,28 @@
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
+import IconNoLink from "@/components/ui/iconNoLink";
+import { RiComputerLine, RiEyeFill, RiFocus3Line, RiMedalLine, RiSettings2Line, RiShakeHandsLine, RiTimerFlashLine, RiUserHeartLine } from "@remixicon/react";
+import Image from "next/image";
 
 export default function Sobre() {
   const valores = [
     {
-      icon: "🎯",
+      icon: <RiFocus3Line size={40}/>,
       title: "Qualidade",
       description: "Compromisso com a excelência em todos os serviços prestados"
     },
     {
-      icon: "🤝",
+      icon: <RiShakeHandsLine size={40}/>,
       title: "Transparência",
       description: "Honestidade e clareza em todos os orçamentos e procedimentos"
     },
     {
-      icon: "⚡",
+      icon:<RiTimerFlashLine size={40}/>,
       title: "Agilidade",
       description: "Atendimento rápido sem abrir mão da qualidade do serviço"
     },
     {
-      icon: "🔧",
+      icon: <RiSettings2Line size={40}/>,
       title: "Especialização",
       description: "Foco exclusivo em ar condicionado automotivo"
     }
@@ -57,7 +60,16 @@ export default function Sobre() {
       <Header />
       
       {/* Hero Section Sobre */}
-      <section className="relative py-20 bg-gradient-to-r from-gray-800 to-gray-600 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-blue-800 to-blue-600 text-white">
+              <div className="absolute inset-0 opacity-5">
+                      <Image
+                        src="/images/topography.svg" 
+                        alt="Background hero"
+                        fill
+                        className="object-cover filter grayscale "
+                        priority
+                      />
+                    </div>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Sobre a ClimaAuto</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -135,9 +147,9 @@ export default function Sobre() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {valores.map((valor, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center">
-                <div className="text-4xl mb-4">{valor.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{valor.title}</h3>
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center flex flex-col items-center justify-center">
+                <div className="text-4xl mb-4 text-blue-600">{valor.icon}</div>
+                <h3 className="text-xl font-bold text-blue-600 mb-3">{valor.title}</h3>
                 <p className="text-gray-600">{valor.description}</p>
               </div>
             ))}
@@ -161,7 +173,7 @@ export default function Sobre() {
             {equipe.map((membro, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6 text-center">
                 <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
-                  👨‍🔧
+                  <RiUserHeartLine size={40}/>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{membro.nome}</h3>
                 <p className="text-blue-600 font-semibold mb-2">{membro.cargo}</p>
@@ -179,8 +191,8 @@ export default function Sobre() {
       <section className="py-20 bg-blue-900 text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🎯</div>
+            <div className="text-center flex flex-col items-center justify-start gap-2">
+              <IconNoLink color="gray" size="lg"><RiFocus3Line size={40}/></IconNoLink>
               <h3 className="text-2xl font-bold mb-4">Missão</h3>
               <p className="text-blue-100">
                 Proporcionar conforto térmico e qualidade do ar através de serviços 
@@ -189,8 +201,9 @@ export default function Sobre() {
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="text-4xl mb-4">👁️</div>
+            <div className="text-center flex flex-col items-center justify-start gap-2">
+              <IconNoLink color="gray" size="lg"><RiEyeFill size={40}/></IconNoLink>
+            
               <h3 className="text-2xl font-bold mb-4">Visão</h3>
               <p className="text-blue-100">
                 Ser referência nacional em serviços de ar condicionado automotivo, 
@@ -198,8 +211,8 @@ export default function Sobre() {
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="text-4xl mb-4">💎</div>
+            <div className="text-center flex flex-col items-center justify-start gap-2">
+              <IconNoLink color="gray" size="lg"><RiMedalLine size={40}/></IconNoLink>
               <h3 className="text-2xl font-bold mb-4">Valores</h3>
               <p className="text-blue-100">
                 Qualidade, transparência, ética, inovação tecnológica e compromisso 

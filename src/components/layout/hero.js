@@ -1,11 +1,8 @@
-import {
-  RiCheckLine,
-  RiShieldCheckLine,
-  RiSnowflakeFill,
-} from "@remixicon/react";
+import { RiCheckLine, RiSnowflakeFill } from "@remixicon/react";
 import Image from "next/image";
-import IconLink from "../ui/iconLink";
 import IconNoLink from "../ui/iconNoLink";
+import Button from "../ui/button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -13,7 +10,7 @@ export default function Hero() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <Image
-          src="/images/topography.svg" // ou URL externa
+          src="/images/topography.svg"
           alt="Background hero"
           fill
           className="object-cover filter grayscale "
@@ -33,12 +30,12 @@ export default function Hero() {
               Instalação, Manutenção e Reparo Especializado para seu Veículo
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-300">
-                Solicitar Orçamento
-              </button>
-              <button className="border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-300">
-                Nossos Serviços
-              </button>
+              <Button variant="secondary" size="lg">
+                <Link href="/contato">Orçamento Grátis</Link>
+              </Button>
+              <Button variant="outline" size="lg">
+                <Link href="/servicos">Nossos Serviços</Link>
+              </Button>
             </div>
 
             {/* Features List */}

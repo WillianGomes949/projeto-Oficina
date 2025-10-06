@@ -25,7 +25,7 @@ const Button = ({
     secondary:
       "mt-4 bg-orange-500 hover:bg-orange-600 text-white border border-orange-500",
     outline:
-      "mt-4 bg-transparent hover:bg-gray-100 text-blue-600 border border-blue-600",
+      "mt-4 bg-transparent hover:bg-gray-100 text-gray-100 hover:text-gray-700 border border-gray-100 borde-2",
   };
 
   // Configurações de tamanho

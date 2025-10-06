@@ -33,7 +33,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <MyLink href="/contato">
+            <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
               <Button>
                 Orçamento Grátis
               </Button>
