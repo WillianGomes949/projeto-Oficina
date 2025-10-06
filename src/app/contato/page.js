@@ -314,7 +314,7 @@ export default function Contato() {
           <h3 className="text-xl font-semibold text-gray-800 mb-4">
             Nossa Localização
           </h3>
-          <div className="rounded-lg h-auto flex items-center justify-center w-auto">
+          <div className="rounded-lg h-auto flex items-center justify-center w-auto fill-amber-700">
             <Maps lat={-3.73498} lng={-38.52669} zoom={120} className="mb-4" />
           </div>
         </div>

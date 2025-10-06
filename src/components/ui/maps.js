@@ -14,7 +14,7 @@ const Maps = ({
   },${lat - 0.02},${lng + 0.02},${lat + 0.02}&layer=mapnik&marker=${lat},${lng}`;
 
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`w-full  ${className}`}>
       <iframe
         width={width}
         height={height}
@@ -29,7 +29,7 @@ const Maps = ({
       <br/>
       <small className="text-gray-500">
         <a 
-          href="https://www.openstreetmap.org/#map=13/-23.5505/-46.6333" 
+          href={`https://www.openstreetmap.org/query?lat=${lat}&lon=${lng}&zoom=${zoom}`}
           target="_blank" 
           rel="noopener noreferrer"
           className="text-blue-500 hover:underline"
