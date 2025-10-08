@@ -8,6 +8,7 @@ import {
 } from "@remixicon/react";
 import Button from "../ui/button";
 import Link from "next/link";
+import ScrollReveal from "../ScrollReveal";
 
 export default function Services() {
   const services = [
@@ -63,32 +64,34 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 flex flex-col justify-between"
-            >
-              <div>
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                
-              </div>
-              <div>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center text-sm text-gray-500"
-                    >
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button><Link href="/servicos">Saiba Mais</Link></Button>
-              </div>
+            <div key={index}>
+              <ScrollReveal animation="bottom" interval={200}>
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 flex flex-col justify-between h-90">
+                  <div>
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{service.description}</p>
+                  </div>
+                  <div>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center text-sm text-gray-500"
+                        >
+                          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button>
+                      <Link href="/servicos">Saiba Mais</Link>
+                    </Button>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
           ))}
         </div>
