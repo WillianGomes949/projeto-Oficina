@@ -21,11 +21,11 @@ const Button = ({
 }) => {
   // Configurações de variante
   const variantStyles = {
-    primary: "mt-4 bg-blue-600 hover:bg-blue-700 text-white border border-blue-600",
+    primary: "mt-4 bg-blue-600 hover:bg-blue-700 text-white",
     secondary:
-      "mt-4 bg-orange-500 hover:bg-orange-600 text-white border border-orange-500",
+      "mt-4 bg-orange-500 hover:bg-orange-600 text-white",
     outline:
-      "mt-4 bg-transparent hover:bg-gray-100 text-gray-100 hover:text-gray-700 border border-gray-100 borde-2",
+      "mt-4 bg-transparent hover:bg-gray-100 text-gray-100 hover:text-gray-700 border border-gray-100 border-2",
   };
 
   // Configurações de tamanho

@@ -72,23 +72,15 @@ export default function Hero() {
           </ScrollReveal>
           <ScrollReveal animation="fade" interval={200}>
             {/* Image/Illustration */}
-            <div className="hidden md:block">
-              <div className="relative">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transform rotate-3">
-                  <div className="bg-white rounded-xl p-6 transform -rotate-3 shadow-2xl">
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-3xl">
-                          <RiSnowflakeFill />
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">
-                        Serviço Express
-                      </h3>
-                      <p className="text-gray-600">Manutenção em até 2 horas</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="relative flex justify-center items-center">
+              {/* Carro */}
+              <div className="relative z-20">
+                <Image
+                  src="/images/car2.png"
+                  alt="Background hero"
+                  width={700}
+                  height={700}
+                />
               </div>
             </div>
           </ScrollReveal>

@@ -2,6 +2,7 @@ import { RiCheckLine } from "@remixicon/react";
 import IconNoLink from "../ui/iconNoLink";
 import ScrollReveal from "../ScrollReveal";
 import ScrollRevealContainer from "../ScrollRevealContainer";
+import Image from "next/image";
 
 
 export default function WhyChooseUs() {
@@ -31,7 +32,17 @@ export default function WhyChooseUs() {
   return (
     <>
     <ScrollRevealContainer>
-    <section className="py-20 bg-blue-900 text-white">
+    <section className="relative py-20 bg-blue-900 text-white">
+      {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <Image
+                src="/images/topography.svg"
+                alt="Background hero"
+                fill
+                className="object-cover filter grayscale"
+                priority
+              />
+            </div>
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal animation="top" interval={200}>
