@@ -9,7 +9,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className=" shadow-lg sticky top-0 z-50 bg-white/60 backdrop-blur-md">
+    <header className="shadow-lg sticky top-0 z-50 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}

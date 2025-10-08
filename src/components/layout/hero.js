@@ -70,7 +70,7 @@ export default function Hero() {
               </div>
             </div>
           </ScrollReveal>
-          <ScrollReveal animation="right" interval={200}>
+          <ScrollReveal animation="fade" interval={200}>
             {/* Image/Illustration */}
             <div className="hidden md:block">
               <div className="relative">
