@@ -20,7 +20,7 @@ const Button = ({
   const variantStyles = {
     primary: "bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-sm hover:shadow-md",
     secondary: "bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-sm hover:shadow-md",
-    outline: "bg-transparent hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-300 hover:border-slate-400",
+    outline: "bg-transparent hover:bg-slate-50 text-slate-700 hover:text-slate-100 border border-slate-300 hover:border-slate-400",
     ghost: "bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-800",
     danger: "bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-sm hover:shadow-md",
   };

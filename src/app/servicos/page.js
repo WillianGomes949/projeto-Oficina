@@ -1,6 +1,8 @@
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import Button from "@/components/ui/button";
+import MyLink from "@/components/ui/myLink";
+import TitleSection from "@/components/ui/titleSection";
 import {
   RiCarLine,
   RiCarWashingLine,
@@ -14,6 +16,7 @@ import {
   RiWhatsappFill,
   RiPhoneFill,
   RiArrowRightLine,
+  RiSendPlaneLine,
 } from "@remixicon/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -120,7 +123,7 @@ export default function Servicos() {
 
   const colorClasses = {
     blue: "from-blue-500 to-blue-600",
-    cyan: "from-cyan-500 to-cyan-600", 
+    cyan: "from-cyan-500 to-cyan-600",
     indigo: "from-indigo-500 to-indigo-600",
     emerald: "from-emerald-500 to-emerald-600",
     amber: "from-amber-500 to-amber-600",
@@ -129,54 +132,29 @@ export default function Servicos() {
 
   return (
     <>
+
       {/* Hero Section Serviços */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <Image
-            src="/images/topography.svg"
-            alt="Background pattern"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        
-        {/* Gradient Orbs */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
-
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Nossos{" "}
-              <span className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text">
-                Serviços
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
-              Soluções completas em ar condicionado automotivo com qualidade e garantia
-            </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Link href="/contato">
-                <Button size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700">
-                  <RiWhatsappFill className="mr-2" size={20} />
-                  Solicitar Orçamento
-                </Button>
-              </Link>
-              <Link href="tel:11999999999">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-                  <RiPhoneFill className="mr-2" size={20} />
-                  Ligar Agora
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <TitleSection
+        preTitle="Nossos"
+        titleHighlight=" Serviços"
+        description="Soluções completas em ar condicionado automotivo com qualidade e garantia"
+        bgImage="/images/topography.svg"
+      >
+        {/* CTA Buttons */}
+        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
+          <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
+            <RiWhatsappFill className="mr-2" size={20} />
+            Solicitar Orçamento
+          </Button>
+        </MyLink>
+        <MyLink href="tel:11999999999">
+          <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
+            <RiPhoneFill className="mr-2" size={20} />
+            Ligar Agora
+          </Button>
+        </MyLink>
+      </TitleSection>
+  
       {/* Lista de Serviços */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
@@ -256,7 +234,7 @@ export default function Servicos() {
                 {/* Botão */}
                 <div className="px-6 pb-6">
                   <Link href="/contato">
-                    <Button 
+                    <Button
                       className={`w-full bg-gradient-to-r ${colorClasses[servico.color]} hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300`}
                     >
                       Agendar Serviço
@@ -282,8 +260,8 @@ export default function Servicos() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contato">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
                 >
                   <RiWhatsappFill className="mr-2" size={20} />
@@ -291,8 +269,8 @@ export default function Servicos() {
                 </Button>
               </Link>
               <Link href="tel:11999999999">
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-white/30 text-white hover:bg-white/10"
                 >
@@ -301,7 +279,7 @@ export default function Servicos() {
                 </Button>
               </Link>
             </div>
-            
+
             {/* Additional Info */}
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-300">
               <div className="flex items-center justify-center gap-3">

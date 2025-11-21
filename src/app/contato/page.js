@@ -5,10 +5,10 @@ import IconNoLink from "@/components/ui/iconNoLink";
 import Maps from "@/components/ui/maps";
 import MyLink from "@/components/ui/myLink";
 import Button from "@/components/ui/button";
-import { 
-  RiMailLine, 
-  RiPhoneLine, 
-  RiTimeLine, 
+import {
+  RiMailLine,
+  RiPhoneLine,
+  RiTimeLine,
   RiMapPinLine,
   RiWhatsappFill,
   RiSendPlaneLine,
@@ -16,6 +16,7 @@ import {
 } from "@remixicon/react";
 import Image from "next/image";
 import { useState } from "react";
+import TitleSection from "@/components/ui/titleSection";
 
 export default function Contato() {
   const [formData, setFormData] = useState({
@@ -38,10 +39,10 @@ export default function Contato() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulação de envio
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     console.log("Dados do formulário:", formData);
     alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
     setFormData({
@@ -118,54 +119,28 @@ export default function Contato() {
 
   return (
     <>
-      {/* Hero Section Contato */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <Image
-            src="/images/topography.svg"
-            alt="Background pattern"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        
-        {/* Gradient Orbs */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Entre em{" "}
-              <span className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text">
-                Contato
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
-              Estamos prontos para atender você e resolver o problema do ar
-              condicionado do seu veículo
-            </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
-                <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
-                  <RiWhatsappFill className="mr-2" size={20} />
-                  Falar no WhatsApp
-                </Button>
-              </MyLink>
-              <MyLink href="#formulario">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                  <RiSendPlaneLine className="mr-2" size={20} />
-                  Enviar Mensagem
-                </Button>
-              </MyLink>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TitleSection
+        preTitle=" Entre em"
+        titleHighlight=" Contato"
+        description=" Estamos prontos para atender você e resolver o problema do ar
+              condicionado do seu veículo"
+        bgImage="/images/topography.svg"
+      >
+        {/* CTA Buttons */}
+        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
+          <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
+            <RiWhatsappFill className="mr-2" size={20} />
+            Falar no WhatsApp
+          </Button>
+        </MyLink>
+        <MyLink href="#formulario">
+          <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
+            <RiSendPlaneLine className="mr-2" size={20} />
+            Enviar Mensagem
+          </Button>
+        </MyLink>
+      </TitleSection>
 
       {/* Informações de Contato e Formulário */}
       <section className="py-20 bg-slate-50" id="formulario">
@@ -336,8 +311,8 @@ export default function Contato() {
 
           <div className="max-w-4xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-slate-200 transition-all duration-300 hover:shadow-sm"
               >
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">
@@ -362,11 +337,11 @@ export default function Contato() {
                 Venha nos visitar e conheça nossa estrutura completa para o seu veículo
               </p>
             </div>
-            
+
             <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-              <Maps 
-                lat={-3.73498} 
-                lng={-38.52669} 
+              <Maps
+                lat={-3.73498}
+                lng={-38.52669}
                 zoom={15}
                 height="400px"
                 markerText="ClimaAuto - Ar Condicionado Veicular"

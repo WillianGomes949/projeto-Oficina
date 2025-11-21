@@ -45,7 +45,7 @@ export default function Header() {
           </MyLink>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-3">
             {[
               { href: '/', label: 'Início' },
               { href: '/servicos', label: 'Serviços' },
@@ -55,7 +55,7 @@ export default function Header() {
               <MyLink
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 text-slate-700 hover:text-blue-600 font-medium text-sm rounded-lg hover:bg-slate-50 transition-all duration-200"
+                className="px-3 py-1.5 text-slate-700 hover:text-blue-600 font-medium text-sm rounded-lg hover:bg-slate-50 transition-all duration-200 flex gap-10"
               >
                 {item.label}
               </MyLink>

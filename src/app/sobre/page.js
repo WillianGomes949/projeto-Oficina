@@ -2,10 +2,10 @@ import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import IconNoLink from "@/components/ui/iconNoLink";
 import Button from "@/components/ui/button";
-import { 
-  RiFocus3Line, 
-  RiShakeHandsLine, 
-  RiTimerFlashLine, 
+import {
+  RiFocus3Line,
+  RiShakeHandsLine,
+  RiTimerFlashLine,
   RiSettings2Line,
   RiUserHeartLine,
   RiEyeFill,
@@ -14,10 +14,13 @@ import {
   RiTeamLine,
   RiStarFill,
   RiArrowRightLine,
-  RiWhatsappFill
+  RiWhatsappFill,
+  RiPhoneFill
 } from "@remixicon/react";
 import Image from "next/image";
 import Link from "next/link";
+import TitleSection from "@/components/ui/titleSection";
+import MyLink from "@/components/ui/myLink";
 
 export default function Sobre() {
   const valores = [
@@ -108,43 +111,27 @@ export default function Sobre() {
 
   return (
     <>
-      {/* Hero Section Sobre */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <Image
-            src="/images/topography.svg"
-            alt="Background pattern"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        
-        {/* Gradient Orbs */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
-
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Sobre a{" "}
-              <span className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text">
-                ClimaAuto
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-8">
-              Há mais de 10 anos proporcionando conforto térmico e qualidade no ar condicionado do seu veículo
-            </p>
-            <Link href="/contato">
-              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700">
-                <RiWhatsappFill className="mr-2" size={20} />
-                Conheça Nossos Serviços
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section Serviços */}
+      <TitleSection
+        preTitle=" Sobre a"
+        titleHighlight="ClimaAuto"
+        description="Há mais de 10 anos proporcionando conforto térmico e qualidade no ar condicionado do seu veículo"
+        bgImage="/images/topography.svg"
+      >
+        {/* CTA Buttons */}
+        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
+          <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
+            <RiWhatsappFill className="mr-2" size={20} />
+            Solicitar Orçamento
+          </Button>
+        </MyLink>
+        <MyLink href="/serviços">
+          <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
+            <RiPhoneFill className="mr-2" size={20} />
+            Conheça Nossos Serviços
+          </Button>
+        </MyLink>
+      </TitleSection>
 
       {/* Nossa História */}
       <section className="py-20 bg-white">
@@ -157,32 +144,32 @@ export default function Sobre() {
                 </h2>
                 <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
                   <p>
-                    Fundada em 2013, a <strong className="text-blue-600">ClimaAuto</strong> nasceu da paixão por automóveis e da 
-                    necessidade de oferecer um serviço especializado em ar condicionado veicular 
+                    Fundada em 2013, a <strong className="text-blue-600">ClimaAuto</strong> nasceu da paixão por automóveis e da
+                    necessidade de oferecer um serviço especializado em ar condicionado veicular
                     com qualidade e transparência.
                   </p>
                   <p>
-                    Começamos como uma pequena oficina no bairro e, através de muito trabalho 
-                    e dedicação, nos tornamos referência em São Paulo para serviços de 
+                    Começamos como uma pequena oficina no bairro e, através de muito trabalho
+                    e dedicação, nos tornamos referência em São Paulo para serviços de
                     ar condicionado automotivo.
                   </p>
                   <p>
-                    Ao longo dos anos, investimos constantemente em equipamentos de última 
-                    geração e na capacitação da nossa equipe, sempre acompanhando as 
+                    Ao longo dos anos, investimos constantemente em equipamentos de última
+                    geração e na capacitação da nossa equipe, sempre acompanhando as
                     evoluções tecnológicas dos veículos.
                   </p>
                   <p>
-                    Hoje, atendemos mais de <strong className="text-emerald-600">5.000 clientes satisfeitos</strong> e continuamos 
+                    Hoje, atendemos mais de <strong className="text-emerald-600">5.000 clientes satisfeitos</strong> e continuamos
                     comprometidos com nossa missão de oferecer o melhor serviço do mercado.
                   </p>
                 </div>
               </div>
             </div>
-            
+
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
-                <div 
+                <div
                   key={index}
                   className={`bg-gradient-to-br ${stat.color} rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
                 >
@@ -209,8 +196,8 @@ export default function Sobre() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {valores.map((valor, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg border border-slate-200 hover:border-slate-300 transition-all duration-300 group"
               >
                 <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -238,8 +225,8 @@ export default function Sobre() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {equipe.map((membro, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 group"
               >
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -278,7 +265,7 @@ export default function Sobre() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {missaoVisaoValores.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 group"
                 >
@@ -296,8 +283,8 @@ export default function Sobre() {
             {/* CTA */}
             <div className="text-center mt-12">
               <Link href="/contato">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 border-0"
                 >
                   Fazer Parte Dessa História
