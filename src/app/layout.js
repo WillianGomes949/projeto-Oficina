@@ -1,6 +1,9 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import StartButton from "@/components/ui/startButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,11 +28,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+        <Header/>
         {children}
+        <StartButton/>
+        <Footer/>
       </body>
-      <Script src="./scrollreveal.min.js"></Script>
     </html>
   );
 }

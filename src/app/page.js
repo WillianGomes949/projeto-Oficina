@@ -11,16 +11,11 @@ import StartButton from "@/components/ui/startButton";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <WhyChooseUs />
-        <Contact />
-        <StartButton/>
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Hero />
+      <Services />
+      <WhyChooseUs />
+      <Contact />
+    </main>
   );
 }

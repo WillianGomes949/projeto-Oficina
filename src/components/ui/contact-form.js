@@ -1,17 +1,18 @@
+"use client";
 import React, { useState } from "react";
 import Button from "../ui/button";
+import { RiMailSendLine, RiCheckboxCircleLine } from "@remixicon/react";
 
-
-export default function Form() {
-  // Estado para armazenar todos os dados do formulário em um único objeto
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Função para atualizar o estado quando o usuário digita em qualquer campo
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -20,76 +21,113 @@ export default function Form() {
     }));
   };
 
-  // Função para lidar com o envio do formulário
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Impede o recarregamento da página
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulação de envio
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
     console.log("Dados do formulário enviados:", formData);
-    alert("Formulário enviado! Verifique o console para ver os dados.");
-    // Aqui você adicionaria a lógica para enviar os dados para uma API
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset form after success
+    setTimeout(() => {
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setIsSubmitted(false);
+    }, 3000);
   };
 
-  // Classes de estilo reutilizáveis para os inputs
-  const inputStyle =
-    "w-full p-4 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow";
+  const inputStyle = `
+    w-full px-4 py-3 
+    bg-slate-50 border border-slate-200 
+    rounded-xl 
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+    transition-all duration-200
+    placeholder-slate-400
+    hover:border-slate-300
+  `;
+
+  if (isSubmitted) {
+    return (
+      <div className="rounded-2xl p-8 text-center border border-green-200 bg-green-50">
+        <RiCheckboxCircleLine className="mx-auto text-green-500 mb-4" size={48} />
+        <h3 className="text-2xl font-bold text-slate-900 mb-2">Mensagem Enviada!</h3>
+        <p className="text-slate-600">Entraremos em contato em breve.</p>
+      </div>
+    );
+  }
 
   return (
-    <section className="bg-white py-12 md:py-20">
-      <div className="max-w-5xl mx-auto px-4">
-        {/* Cabeçalho da Seção */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Entre e Contato
-          </h2>
-          <div className="w-24 h-1 bg-gray-200 mx-auto mt-4 mb-6"></div>
-          <p className="max-w-2xl mx-auto text-gray-500">
-            Delectus, nesciunt imperdiet dolor litora orci? Tristique per natus.
-            Saepe convallis nostra. Ducimus convallis necessitatibus alias,
-            bibendum elit nemo.
-          </p>
-        </div>
+    <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+      <div className="mb-8">
+        <h3 className="text-2xl font-bold text-slate-900 mb-3">
+          Envie sua Mensagem
+        </h3>
+        <p className="text-slate-600">
+          Preencha o formulário abaixo e entraremos em contato o mais rápido possível.
+        </p>
+      </div>
 
-        {/* Formulário */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Linha 1 */}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
             <input
               type="text"
               name="name"
-              placeholder="Your Name."
+              placeholder="Seu nome"
               value={formData.name}
               onChange={handleChange}
-              className={inputStyle}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email."
-              value={formData.email}
-              onChange={handleChange}
-              className={inputStyle}
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number."
-              value={formData.phone}
-              onChange={handleChange}
+              required
               className={inputStyle}
             />
           </div>
           <div>
-            <textarea
-              type="text"
-              name="message"
-              placeholder="Message"
-              value={formData.message}
+            <input
+              type="email"
+              name="email"
+              placeholder="Seu email"
+              value={formData.email}
               onChange={handleChange}
-              className={`${inputStyle} resize-none h-40 `}
-            ></textarea>
+              required
+              className={inputStyle}
+            />
           </div>
-          <Button type="submit" color="blue">Enviar</Button>
-        </form>
-      </div>
-    </section>
+        </div>
+
+        <div>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Seu telefone"
+            value={formData.phone}
+            onChange={handleChange}
+            className={inputStyle}
+          />
+        </div>
+
+        <div>
+          <textarea
+            name="message"
+            placeholder="Sua mensagem..."
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            className={`${inputStyle} resize-none`}
+          />
+        </div>
+
+        <Button
+          type="submit"
+          loading={isSubmitting}
+          icon={RiMailSendLine}
+          className="w-full bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
+        >
+          {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+        </Button>
+      </form>
+    </div>
   );
 }
