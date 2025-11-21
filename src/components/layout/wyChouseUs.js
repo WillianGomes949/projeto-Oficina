@@ -1,7 +1,6 @@
 import { RiCheckLine } from "@remixicon/react";
 import IconNoLink from "../ui/iconNoLink";
-import ScrollReveal from "../ScrollReveal";
-import ScrollRevealContainer from "../ScrollRevealContainer";
+
 import Image from "next/image";
 
 
@@ -31,21 +30,20 @@ export default function WhyChooseUs() {
 
   return (
     <>
-    <ScrollRevealContainer>
-    <section className="relative py-20 bg-blue-900 text-white">
-      {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <Image
-                src="/images/topography.svg"
-                alt="Background hero"
-                fill
-                className="object-cover filter grayscale"
-                priority
-              />
-            </div>
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal animation="top" interval={200}>
+      <section className="relative py-20 bg-blue-900 text-white">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <Image
+            src="/images/topography.svg"
+            alt="Background hero"
+            fill
+            className="object-cover filter grayscale"
+            priority
+          />
+        </div>
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+
             <div>
               <h2 className="text-4xl font-bold mb-6">
                 Por que Escolher a{" "}
@@ -99,8 +97,8 @@ export default function WhyChooseUs() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
-          <ScrollReveal animation="bottom" interval={200}>
+
+
             <div className="grid grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <div
@@ -117,12 +115,12 @@ export default function WhyChooseUs() {
                 </div>
               ))}
             </div>
-          </ScrollReveal>
+
+          </div>
         </div>
-      </div>
-    </section>
-   </ScrollRevealContainer>
+      </section>
+
     </>
-   
+
   );
 }

@@ -8,8 +8,6 @@ import {
 } from "@remixicon/react";
 import Button from "../ui/button";
 import Link from "next/link";
-import ScrollReveal from "../ScrollReveal";
-import ScrollRevealContainer from "../ScrollRevealContainer";
 
 export default function Services() {
   const services = [
@@ -52,7 +50,7 @@ export default function Services() {
 
   return (
     <>
-      <ScrollRevealContainer>
+    
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
@@ -68,7 +66,7 @@ export default function Services() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
                 <div key={index}>
-                  <ScrollReveal animation="bottom" interval={200}>
+                
                     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 flex flex-col justify-between h-90">
                       <div>
                         <div className="text-4xl mb-4">{service.icon}</div>
@@ -96,13 +94,12 @@ export default function Services() {
                         </Button>
                       </div>
                     </div>
-                  </ScrollReveal>
+                 
                 </div>
               ))}
             </div>
           </div>
         </section>
-      </ScrollRevealContainer>
     </>
   );
 }

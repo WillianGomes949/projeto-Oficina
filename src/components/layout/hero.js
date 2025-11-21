@@ -3,7 +3,6 @@ import Image from "next/image";
 import IconNoLink from "../ui/iconNoLink";
 import Button from "../ui/button";
 import Link from "next/link";
-import ScrollReveal from "../ScrollReveal";
 
 export default function Hero() {
   return (
@@ -21,7 +20,6 @@ export default function Hero() {
 
       <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal animation="left" interval={200}>
             {/* Text Content */}
             <div className="text-white">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 flex flex-wrap">
@@ -69,8 +67,6 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
-          <ScrollReveal animation="fade" interval={200}>
             {/* Image/Illustration */}
             <div className="relative flex justify-center items-center">
               {/* Carro */}
@@ -83,7 +79,6 @@ export default function Hero() {
                 />
               </div>
             </div>
-          </ScrollReveal>
         </div>
       </div>
     </section>
