@@ -1,6 +1,5 @@
 import { RiCheckLine, RiSnowflakeFill, RiWhatsappFill } from "@remixicon/react";
 import Image from "next/image";
-import IconNoLink from "../ui/iconNoLink";
 import Button from "../ui/button";
 import Link from "next/link";
 
@@ -47,7 +46,7 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
+              <Link href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank" aria-label="Orçamento Grátis">
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
@@ -56,7 +55,7 @@ export default function Hero() {
                   Orçamento Grátis
                 </Button>
               </Link>
-              <Link href="/servicos">
+              <Link href="/servicos" aria-label="Nossos Serviços">
                 <Button 
                   variant='secondary'
                   size="lg"

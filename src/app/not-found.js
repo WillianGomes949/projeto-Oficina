@@ -23,7 +23,7 @@ export default function NotFound() {
                 </p>
                 <div className="mt-10">
                     <Button>
-                        <Link href="/">Voltar à Página Inicial</Link>
+                        <Link href="/" aria-label="Voltar à Página Inicial">Voltar à Página Inicial</Link>
                     </Button>
                 </div>
             </div>

@@ -35,6 +35,7 @@ const StartButton = () => {
     }`}>
       <Button
         type="button"
+        arial-label="Voltar ao topo"
         variant="primary"
         size="md"
         fullWidth={false}

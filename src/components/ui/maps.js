@@ -38,6 +38,7 @@ const Maps = ({
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/90 backdrop-blur-sm text-slate-700 px-3 py-2 rounded-lg text-sm font-medium hover:bg-white transition-all duration-200 shadow-sm hover:shadow-md border border-slate-200"
+              arial-label="Abrir no OpenStreetMap"
             >
               Ampliar Mapa
             </a>
@@ -46,6 +47,7 @@ const Maps = ({
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-500 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-all duration-200 shadow-sm hover:shadow-md"
+              arial-label="Abrir no Google Maps"
             >
               Abrir no Google Maps
             </a>
@@ -62,6 +64,7 @@ const Maps = ({
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-600 hover:underline transition-colors duration-200"
+              arial-label="Abrir no OpenStreetMap"
             >
               OpenStreetMap
             </a>
@@ -70,6 +73,7 @@ const Maps = ({
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-600 hover:underline transition-colors duration-200"
+              arial-label="Abrir no Google Maps"
             >
               Google Maps
             </a>

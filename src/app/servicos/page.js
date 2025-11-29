@@ -141,13 +141,13 @@ export default function Servicos() {
         bgImage="/images/topography.svg"
       >
         {/* CTA Buttons */}
-        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
+        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank" aria-label="Solicitar Orçamento">
           <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
             <RiWhatsappFill className="mr-2" size={20} />
             Solicitar Orçamento
           </Button>
         </MyLink>
-        <MyLink href="tel:11999999999">
+        <MyLink href="tel:11999999999" aria-label="Ligar Agora">
           <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
             <RiPhoneFill className="mr-2" size={20} />
             Ligar Agora
@@ -233,7 +233,7 @@ export default function Servicos() {
 
                 {/* Botão */}
                 <div className="px-6 pb-6">
-                  <Link href="/contato">
+                  <Link href="/contato" aria-label="Agendar Serviço">
                     <Button
                       className={`w-full bg-gradient-to-r ${colorClasses[servico.color]} hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300`}
                     >
@@ -259,7 +259,7 @@ export default function Servicos() {
               Entre em contato agora mesmo e agende uma avaliação gratuita do seu veículo
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato">
+              <Link href="/contato" aria-label="Agendar Serviço">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
@@ -268,7 +268,7 @@ export default function Servicos() {
                   Solicitar Orçamento
                 </Button>
               </Link>
-              <Link href="tel:11999999999">
+              <Link href="tel:11999999999" aria-label="Ligar Agora">
                 <Button
                   variant="outline"
                   size="lg"

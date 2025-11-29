@@ -30,6 +30,7 @@ export default function Header() {
             href="/" 
             className="flex items-center group"
             onClick={() => setIsMenuOpen(false)}
+            arial-label="Logo"
           >
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300">
               <RiSnowflakeFill className="text-white text-lg" />
@@ -55,6 +56,7 @@ export default function Header() {
               <MyLink
                 key={item.href}
                 href={item.href}
+                aria-label={item.label}
                 className="px-3 py-1.5 text-slate-700 hover:text-blue-600 font-medium text-sm rounded-lg hover:bg-slate-50 transition-all duration-200 flex gap-10"
               >
                 {item.label}
@@ -80,11 +82,12 @@ export default function Header() {
           <button
             className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="menu mobile"
           >
             {isMenuOpen ? (
-              <RiCloseLine className="text-slate-700" size={24} />
+              <RiCloseLine className="text-slate-700" size={24} aria-label="fechar menu"/>
             ) : (
-              <RiMenuLine className="text-slate-700" size={24} />
+              <RiMenuLine className="text-slate-700" size={24} aria-label="menu"/>
             )}
           </button>
         </div>
@@ -116,6 +119,7 @@ export default function Header() {
                 target="_blank"
                 onClick={() => setIsMenuOpen(false)}
                 className="block"
+                arial-label="nosso whatsapp"
               >
                 <Button className="w-full bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
                   <RiWhatsappFill className="mr-2" size={18} />

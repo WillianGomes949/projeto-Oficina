@@ -87,7 +87,7 @@ export default function Services() {
                 </ul>
 
                 {/* CTA */}
-                <Link href="/servicos" className="inline-block">
+                <Link href="/servicos" className="inline-block" aria-label="Saiba Mais">
                   <Button
                     variant="ghost"
                     className="group/btn w-full justify-center mt-4 text-blue-600 hover:text-blue-700 hover:bg-blue-50"

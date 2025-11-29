@@ -72,7 +72,8 @@ export default function Contato() {
       content: "(11) 9999-9999",
       subtitle: "WhatsApp disponível",
       href: "tel:11999999999",
-      color: "blue"
+      color: "blue",
+      label: "WhatsApp"
     },
     {
       icon: <RiMailLine className="text-green-500" />,
@@ -80,21 +81,24 @@ export default function Contato() {
       content: "contato@climauto.com.br",
       subtitle: "Respondemos em até 2 horas",
       href: "mailto:contato@climauto.com.br",
-      color: "green"
+      color: "green",
+      label: "Email"
     },
     {
       icon: <RiMapPinLine className="text-amber-500" />,
       title: "Endereço",
       content: "Rua das Flores, 123 - Jardim Paulista, São Paulo - SP, 01415-000",
       href: "#mapa",
-      color: "orange"
+      color: "orange",
+      label: "Mapa"
     },
     {
       icon: <RiTimeLine className="text-purple-500" />,
       title: "Horário de Funcionamento",
       content: "Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h | Domingo: Fechado",
       href: "#",
-      color: "purple"
+      color: "purple",
+      label: "Horário"
     }
   ];
 
@@ -128,13 +132,13 @@ export default function Contato() {
         bgImage="/images/topography.svg"
       >
         {/* CTA Buttons */}
-        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
+        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank" aria-label="Falar no WhatsApp">
           <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
             <RiWhatsappFill className="mr-2" size={20} />
             Falar no WhatsApp
           </Button>
         </MyLink>
-        <MyLink href="#formulario">
+        <MyLink href="#formulario" aria-label="Enviar Mensagem">
           <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
             <RiSendPlaneLine className="mr-2" size={20} />
             Enviar Mensagem
@@ -163,6 +167,7 @@ export default function Contato() {
                   <a
                     key={index}
                     href={info.href}
+                    aria-label={info.label}
                     className="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm hover:shadow-md border border-slate-100 hover:border-slate-200 transition-all duration-300 group"
                   >
                     <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

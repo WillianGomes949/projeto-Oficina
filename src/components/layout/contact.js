@@ -115,7 +115,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <select className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                <select className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" aria-label=''>
                   <option className="text-slate-300">Selecione o Serviço</option>
                   <option className="text-slate-900">Manutenção Preventiva</option>
                   <option className="text-slate-900">Diagnóstico Eletrônico</option>

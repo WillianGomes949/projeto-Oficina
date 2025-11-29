@@ -119,13 +119,13 @@ export default function Sobre() {
         bgImage="/images/topography.svg"
       >
         {/* CTA Buttons */}
-        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank">
+        <MyLink href="https://wa.me/5585999999999?text=Queria%20saber%20mais" target="_blank" aria-label="Solicitar Orçamento">
           <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
             <RiWhatsappFill className="mr-2" size={20} />
             Solicitar Orçamento
           </Button>
         </MyLink>
-        <MyLink href="/serviços">
+        <MyLink href="/serviços" aria-label="Conheça Nossos Serviços">
           <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
             <RiPhoneFill className="mr-2" size={20} />
             Conheça Nossos Serviços
@@ -282,7 +282,7 @@ export default function Sobre() {
 
             {/* CTA */}
             <div className="text-center mt-12">
-              <Link href="/contato">
+              <Link href="/contato" aria-label="Fazer Parte Dessa História">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 border-0"
